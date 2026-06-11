@@ -1,5 +1,6 @@
 ---
 name: credit-check
+identifier: dmacns-dmacns-skills-credit-check
 description: Use when the user wants to evaluate a supplier's credibility, verify business registration, check company operational status, or assess counterparty risk before a transaction. Searches public business registries and trade records.
 version: 1.0.0
 author: 鼎脉数字 (Dingmai Digital)

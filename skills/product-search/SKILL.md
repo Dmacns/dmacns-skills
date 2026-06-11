@@ -1,5 +1,6 @@
 ---
 name: product-search
+identifier: dmacns-dmacns-skills-product-search
 description: Use when the user wants to search for product suppliers, find sourcing options, or discover manufacturers for a specific product category. Searches across major B2B and B2C platforms and returns structured supplier information.
 version: 1.0.0
 author: 鼎脉数字 (Dingmai Digital)

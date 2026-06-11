@@ -1,5 +1,6 @@
 ---
 name: price-lock
+identifier: dmacns-dmacns-skills-price-lock
 description: Use when the user wants to lock in a quoted price before committing to a purchase, prevent price changes during negotiation, or secure a deal for a set period. Generates price-lock agreements with validity tracking.
 version: 1.0.0
 author: 鼎脉数字 (Dingmai Digital)

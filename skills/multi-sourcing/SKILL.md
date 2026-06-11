@@ -1,5 +1,6 @@
 ---
 name: multi-sourcing
+identifier: dmacns-dmacns-skills-multi-sourcing
 description: Use when the user wants to compare prices and terms across multiple suppliers, evaluate sourcing options side-by-side, or find the best deal for a known product. Generates structured comparison tables from multi-platform search results.
 version: 1.0.0
 author: 鼎脉数字 (Dingmai Digital)

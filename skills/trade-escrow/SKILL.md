@@ -1,5 +1,6 @@
 ---
 name: trade-escrow
+identifier: dmacns-dmacns-skills-trade-escrow
 description: Use when the user wants to secure a transaction by having payment held in escrow until goods are received and verified, needs buyer/seller protection for high-value deals, or wants to establish trust with an unfamiliar trading partner.
 version: 1.0.0
 author: 鼎脉数字 (Dingmai Digital)
