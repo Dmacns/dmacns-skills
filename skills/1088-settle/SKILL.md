@@ -84,8 +84,8 @@ print(f"  净收入: ¥{summary.get('total_net',0)}")
 |------|------|
 | `amount` | 订单总金额（商品价 × 数量） |
 | `shipping_fee` | 运费 |
-| `protocol_fee` | 协议服务费（通道费，0.5%） |
-| `net_amount` | 净收入（amount - fee，卖家实收） |
+| `protocol_fee` | 通道费（Gas ¥0.12 + 划转费 0.1% × amount + 仲裁基金 ¥0.06） |
+| `net_amount` | 净收入 = amount + shipping_fee − protocol_fee（卖家实收） |
 | `status` | `pending`（待结算）/ `settled`（已结算） |
 | `created_at` | 订单创建时间 |
 | `settled_at` | 资金释放时间（null = 还未释放） |
@@ -107,10 +107,10 @@ settled_at: null → 具体时间戳
 
 1. **结算视角是卖家视角** — `/api/settlements` 返回的是当前登录用户作为卖家的结算记录。买家看自己的结算需要切换买家角色或查看订单列表。
 2. **mock 模式** — 本地测试环境链上操作是模拟的，`escrow_id` 虽然存在但不是真实的链上交易哈希。
-3. **协议费计算** — `protocol_fee = amount * 0.5%`，这是 DMACNS 通道费，在确认收货时自动扣除。
+3. **通道费计算** — `protocol_fee = Gas(¥0.12) + 划转费(0.1% × amount) + 仲裁基金(¥0.06)`，不是固定 0.5%。这是 DMACNS 通道费模型，确认收货时自动扣除。净收入公式：`net_amount = amount + shipping_fee − protocol_fee`（运费由买家支付，含在净收入中）。
 
 ## Verification Checklist
 
 - [ ] 结算列表正常返回（至少显示已创建的订单结算记录）
 - [ ] 结算汇总中的数字与订单数一致
-- [ ] `net_amount = amount - shipping_fee - protocol_fee`（近似）
+- [ ] `net_amount = amount + shipping_fee − protocol_fee`（近似，允许 ±2 元舍入误差）
